@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RASPADOS MÉXICO LINDO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #7cd7f3, #e9da55); /* Fondo azul claro */
+    }
+
+    /* Encabezado */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+       background: linear-gradient(to bottom, #0b5eb1, #87CEFA);
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      flex: 1;
+      text-align: center;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+    }
+
+    /* Flecha atrás */
+    .back-arrow {
+      width: 15px;
+      height: 15px;
+      border-left: 7px solid rgba(255, 255, 255, 0.774);
+      border-bottom: 7px solid rgba(255, 255, 255, 0.774);
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    /* Cajón */
+    .card {
+      background: rgba(255, 255, 255, 0.295);
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+      max-height: 60px; /* Cerrado por defecto */
+    }
+
+    .card.open {
+      max-height: 300px; /* Expandido */
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Flecha desplegable */
+    .arrow {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 3px solid #3498db;
+      border-bottom: 3px solid #3498db;
+      transform: rotate(-45deg);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card.open .arrow {
+      transform: rotate(135deg); /* Gira hacia arriba */
+    }
+
+    .descripcion {
+      margin-top: 15px;
+      display: none;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .card.open .descripcion {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="back-arrow" onclick="location.href='index.html'"></div>
+    <h1>Raspados</h1>
+      <img src="erasebg-transformed.png" class="logo">
+  </header>
+
+  <!-- Cajones -->
+  <div class="card">
+    <h2>Baileys</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera y chocolate hershey.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Pistache</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+    <div class="card">
+    <h2>Nuez</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+    <div class="card">
+    <h2>Napolitano</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Lleva nuez, rompope, nescafe, fresa, lechera y canela<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+  </div>
+
+    <div class="card">
+    <h2>Diablito</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Pueden ser de cualquier sabor de agua y se le pone limon, sal y piquin.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+    <div class="card">
+    <h2>Chamoyada</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Pueden ser de cualquier sabor de agua y se le pone limon, sal, chile y chamoy.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Angelito</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Lleva limon y sal.<br><br>
+      Chico   45$<br>
+      Mediano 55$<br>
+      Grande  75$<br>
+      Litro  130$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Queso cottage</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Lechera</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Es un raspado que solo lleva lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chocolate</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera y chocolate Hershey.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Mamey</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cajeta</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Rompope</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Nescafe</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chocoretas</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera y chocolate Hershey.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Piña colada</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Coco</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Arroz con leche</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera y canela.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Monjita</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Lleva rompope, lechera, canela y fresa.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cereza</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Mazapan</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Moka</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Lleva chocolate y nescafe.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Fresa de leche</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede llevar lechera.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chicle</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Puede ser chicle rosa, azul o combinado.<br><br>
+      Chico   40$<br>
+      Mediano 50$<br>
+      Grande  60$<br>
+      Litro  120$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Limón</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Uva</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Guanabana</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+        Puede llevar lechera.<br><br>
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Mango</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Piña</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Fresa</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Maracuya</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Grosella</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Tamarindo</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cereza de agua</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Durazno</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Frutos rojos</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+     Puede llevar lechera.<br><br>
+      Chico   30$<br>
+      Mediano 40$<br>
+      Grande  50$<br>
+      Litro  100$
+    </div>
+  </div>
+
+  <script>
+    function toggleCajon(elemento) {
+      const card = elemento.parentElement;
+
+      // Cierra todos los cajones antes de abrir el seleccionado
+      document.querySelectorAll(".card").forEach(c => {
+        if (c !== card) {
+          c.classList.remove("open");
+        }
+      });
+
+      // Alterna el cajón seleccionado
+      card.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>

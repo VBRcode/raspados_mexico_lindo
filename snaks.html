@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RASPADOS MÉXICO LINDO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #7cd7f3, #e9da55); /* Fondo azul claro */
+    }
+
+    /* Encabezado */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+       background: linear-gradient(to bottom, #0b5eb1, #87CEFA);
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      flex: 1;
+      text-align: center;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+    }
+
+    /* Flecha atrás */
+    .back-arrow {
+      width: 15px;
+      height: 15px;
+      border-left: 7px solid white;
+      border-bottom: 7px solid white;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    /* Cajón */
+    .card {
+      background: rgba(255, 255, 255, 0.295);
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+      max-height: 60px; /* Cerrado por defecto */
+    }
+
+    .card.open {
+      max-height: 300px; /* Expandido */
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Flecha desplegable */
+    .arrow {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 3px solid #3498db;
+      border-bottom: 3px solid #3498db;
+      transform: rotate(-45deg);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card.open .arrow {
+      transform: rotate(135deg); /* Gira hacia arriba */
+    }
+
+    .descripcion {
+      margin-top: 15px;
+      display: none;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .card.open .descripcion {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="back-arrow" onclick="location.href='index.html'"></div>
+    <h1>Snaks</h1>
+    <img src="erasebg-transformed.png" class="logo">
+  </header>
+
+  <!-- Cajones -->
+  <div class="card">
+    <h2>Pepinos Lokos</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan cueros,cacahuates, jicama, zanahoria, chamoy, valentina o botanera, piquin, tajin, limón, sal, maggi e inglesa.<br><br>
+      Charola   50$<br>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Dorilocos</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan cueros, jicama, zanahoria, pepino, cacahuates, chamoy, valentina o botanera, piquin, tajin, limón, sal,.<br><br>
+      Charola   50$<br>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Papas locas</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan cueros,cacahuates, valentina, botanera, piquin, tajin, limón, sal, maggi e inglesa.<br><br>
+      Charola   50$<br>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chicharrón especial </h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan col, jicama, zanahoria, cueros, jitomate, aguacate, crema, cacahuates, valentina o botanera, tajin, limón, sal, maggi e inglesa.<br><br>
+      Mitad    30$<br>
+      Completo 55$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Chicharrón preparado </h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan col, cueros, jitomate, aguacate, crema, valentina o botanera, tajin, limón y sal.<br><br>
+      Mitad    20$<br>
+      Completo 35$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cueritos</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan cueros, valentina o botanera, piquin, tajin, limón, sal, maggi e inglesa.<br><br>
+      Caso   15$<br>
+      Con hot nust 20$<br>
+      Charola 30$
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cueritos grandes</h2>
+    <div class="arrow" onclick="toggleCajon(this)"></div>
+    <div class="descripcion">
+      Llevan cueros, jicama, zanahoria,cacahuates, valentina, botanera, piquin, tajin, limón, sal, maggi e inglesa.<br><br>
+      Vaso de 1L   65$<br>
+    </div>
+  </div>
+
+    <script>
+    function toggleCajon(elemento) {
+      const card = elemento.parentElement;
+
+      // Cierra todos los cajones antes de abrir el seleccionado
+      document.querySelectorAll(".card").forEach(c => {
+        if (c !== card) {
+          c.classList.remove("open");
+        }
+      });
+
+      // Alterna el cajón seleccionado
+      card.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>

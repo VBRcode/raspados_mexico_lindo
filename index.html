@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RASPADOS MÉXICO LINDO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+       background: linear-gradient(to bottom, #35bde6, #d0ee48);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .logo {
+      width: 250px;
+      height: 250px;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .menu button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu button:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Logotipo (puedes reemplazar por una imagen con <img src="logo.png" class="logo">) -->
+  <img src="erasebg-transformed.png" class="logo">
+
+  <!-- Botones -->
+  <div class="menu">
+    <button onclick="location.href='raspados.html'">Raspados</button>
+    <button onclick="location.href='bebidas.html'">Bebidas</button>
+    <button onclick="location.href='snaks.html'">Snaks</button>
+  </div>
+
+  <footer>© 2025 RASPADOS MÉXICO LINDO</footer>
+
+  <script>
+    function mostrarSeccion(seccion) {
+      alert("Has seleccionado: " + seccion);
+      // Aquí puedes hacer que se abra otra página o muestre la sección correspondiente
+    }
+  </script>
+</body>
+</html>
